@@ -2,6 +2,7 @@ module Spree
   # Place where events are planned at
   class EventfulPlace < Spree::Base
     has_many :events, class_name: 'EventfulEvent', foreign_key: :place_id
+    scope :active, -> { where(active: true) }
 
     has_attached_file :image,
                       styles: {
