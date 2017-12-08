@@ -2,6 +2,7 @@ module Spree
   # Planned event related to one of the Eventful Places
   class EventfulEvent < Spree::Base
     belongs_to :place, class_name: 'EventfulPlace'
+    validates :name, :place, presence: true
 
     has_attached_file :image,
                       styles: {

@@ -3,6 +3,7 @@ module Spree
   class EventfulPlace < Spree::Base
     has_many :events, class_name: 'EventfulEvent', foreign_key: :place_id
     scope :active, -> { where(active: true) }
+    validates :name, presence: true
 
     has_attached_file :image,
                       styles: {
