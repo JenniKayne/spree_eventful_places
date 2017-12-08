@@ -1,0 +1,7 @@
+en:
+  spree:
+    eventful_place: Place
+    eventful_places: Places
+    eventful_event: Event
+    eventful_events: Events
+    eventful_places_menu_item: Eventful Places
