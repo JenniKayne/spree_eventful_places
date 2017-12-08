@@ -1,13 +1,13 @@
 SpreeEventfulPlaces
 ===================
 
-Introduction goes here.
+Add Places and attach events to them.
 
 ## Installation
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spree_eventful_places', github: '[your-github-handle]/spree_eventful_places'
+  gem 'spree_eventful_places', github: 'praesensco/spree_eventful_places'
   ```
 
 2. Install the gem using Bundler:
@@ -40,11 +40,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_eventful_places/factories'
 ```
 
-
-## Contributing
-
-If you'd like to contribute, please take a look at the
-[instructions](CONTRIBUTING.md) for installing dependencies and crafting a good
-pull request.
-
-Copyright (c) 2017 [name of extension creator], released under the New BSD License
+Copyright (c) 2017 PRAESENS, released under the New BSD License
