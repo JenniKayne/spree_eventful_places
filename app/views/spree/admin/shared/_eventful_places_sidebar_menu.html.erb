@@ -1,0 +1,7 @@
+<% if can? :admin, Spree::EventfulPlace %>
+  <ul class="nav nav-sidebar">
+    <%= main_menu_tree Spree.t(:eventful_places_menu_item), url: "#sidebar-eventful_places",
+                                                  icon: 'leaf',
+                                                  sub_menu: "eventful_places" %>
+  </ul>
+<% end %>

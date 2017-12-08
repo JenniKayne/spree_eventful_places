@@ -1,0 +1,17 @@
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:eventful_events), spree.admin_eventful_events_url %> /
+  <%= @eventful_event.name %>
+<% end %>
+
+<div data-hook="admin_eventful_event_edit_form_header">
+  <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @eventful_event } %>
+</div>
+
+<div data-hook="admin_eventful_event_edit_form">
+  <%= form_for [:admin, @eventful_event] do |f| %>
+    <%= render partial: 'form', locals: { f: f } %>
+    <div data-hook="admin_eventful_event_edit_form_buttons">
+      <%= render partial: 'spree/admin/shared/edit_resource_links' %>
+    </div>
+  <% end %>
+</div>
