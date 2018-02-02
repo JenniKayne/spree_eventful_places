@@ -30,6 +30,7 @@ module Spree
     private
 
     def pretty_datetime(datetime)
+      return '' if datetime.blank?
       datetime.strftime("%Y-%m-%d %l:%M %p")
     end
   end
