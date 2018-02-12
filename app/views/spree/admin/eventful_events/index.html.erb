@@ -9,8 +9,9 @@
 <% if @eventful_events.any? %>
   <table class="table" id="listing_eventful_events" data-hook>
     <colgroup>
-      <col style="width: 30%">
-      <col style="width: 25%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 15%">
       <col style="width: 15%">
       <col style="width: 15%">
       <col style="width: 15%">
@@ -19,6 +20,7 @@
       <tr data-hook="admin_eventful_events_index_headers">
         <th><%= Spree.t(:eventful_place) %></th>
         <th><%= Spree.t(:name) %></th>
+        <th><%= Spree.t(:global) %></th>
         <th><%= Spree::EventfulEvent.human_attribute_name(:starts_at) %></th>
         <th><%= Spree::EventfulEvent.human_attribute_name(:ends_at) %></th>
         <th data-hook="admin_eventful_events_index_header_actions" class="actions"></th>
@@ -29,6 +31,7 @@
         <tr data-hook="admin_eventful_events_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id event %>">
           <td><%= event.place.name %></td>
           <td><%= event.name %></td>
+          <td><%= content_tag(:i, '', class: 'icon icon-ok') if event.global %></td>
           <td><%= event.starts_at %></td>
           <td><%= event.ends_at %></td>
           <td class="actions text-right" data-hook="admin_eventful_events_index_row_actions">

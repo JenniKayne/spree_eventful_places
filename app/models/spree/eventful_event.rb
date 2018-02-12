@@ -3,6 +3,7 @@ module Spree
   class EventfulEvent < Spree::Base
     belongs_to :place, class_name: 'EventfulPlace'
     validates :name, :place, presence: true
+    scope :global, -> { where(global: true) }
 
     has_attached_file :image,
                       styles: {

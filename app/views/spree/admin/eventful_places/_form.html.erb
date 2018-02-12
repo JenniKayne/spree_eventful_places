@@ -17,7 +17,7 @@
         <%= f.error_message_on :description %>
       <% end %>
 
-      <% events = f.object.events %>
+      <% events = f.object.all_events %>
       <% if events.any? %>
         <table class="table" data-hook="admin_eventful_place_form_events_table">
           <colgroup>
