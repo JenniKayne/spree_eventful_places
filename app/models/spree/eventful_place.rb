@@ -20,6 +20,10 @@ module Spree
                            content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
                          }
 
+    def all_events
+      events.or(Spree::EventfulEvent.global)
+    end
+
     def geolocation_url
       address_param = CGI.escape(ActionController::Base.helpers.strip_tags(address))
       "https://www.google.com/maps/search/?api=1&query=#{address_param}+#{geolocation_url_suffix}"

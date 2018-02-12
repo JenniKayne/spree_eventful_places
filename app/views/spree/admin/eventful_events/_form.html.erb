@@ -6,7 +6,7 @@
       <%= f.error_message_on :name %>
     </div>
 
-    <div data-hook="admin_eventful_event_form_place_field" class="col-xs-12 col-md-6">
+    <div data-hook="admin_eventful_event_form_place_field" class="col-xs-12 col-md-4">
       <%= f.field_container :place_id, class: ['form-group'] do %>
         <%= f.label :place_id, Spree.t(:eventful_place) %>
         <%= f.collection_select :place_id,
@@ -17,6 +17,17 @@
                                 { class: 'select2' } %>
       <% end %>
     </div>
+
+    <div data-hook="checkbox admin_eventful_event_form_global_field" class="col-xs-12 col-md-2">
+      <%= f.field_container :global, class: ['form-group'] do %>
+        <br />
+        <%= f.label :global do %>
+          <%= f.check_box :global %>
+          <%= Spree.t(:global) %>
+        <% end %>
+      <% end %>
+    </div>
+    <%= f.error_message_on :global %>
   </div>
 
   <div class="row">
