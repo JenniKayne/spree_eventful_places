@@ -21,7 +21,7 @@ module Spree
                          }
 
     def all_events
-      events.or(Spree::EventfulEvent.global)
+      @all_events ||= events.or(Spree::EventfulEvent.global)
     end
 
     def geolocation_url

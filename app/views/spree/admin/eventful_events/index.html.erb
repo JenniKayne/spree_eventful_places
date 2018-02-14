@@ -29,7 +29,7 @@
     <tbody>
       <% @eventful_events.each do |event| %>
         <tr data-hook="admin_eventful_events_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id event %>">
-          <td><%= event.place.name %></td>
+          <td><%= event.place_name %></td>
           <td><%= event.name %></td>
           <td><%= content_tag(:i, '', class: 'icon icon-ok') if event.global %></td>
           <td><%= event.starts_at %></td>
