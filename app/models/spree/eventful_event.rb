@@ -2,7 +2,7 @@ module Spree
   # Planned event related to one of the Eventful Places
   class EventfulEvent < Spree::Base
     belongs_to :place, class_name: 'EventfulPlace'
-    validates :name, :place, presence: true
+    validates :name, presence: true
     scope :global, -> { where(global: true) }
 
     has_attached_file :image,
@@ -19,6 +19,10 @@ module Spree
                          content_type: {
                            content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
                          }
+
+    def place_name
+      place.nil? ? '' : place.name
+    end
 
     def pretty_starts_at
       pretty_datetime(starts_at)
