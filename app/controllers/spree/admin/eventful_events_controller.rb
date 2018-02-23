@@ -4,7 +4,7 @@ module Spree
       protected
 
       def location_after_save
-        edit_admin_eventful_event_path
+        edit_admin_eventful_event_path @eventful_event
       end
     end
   end
