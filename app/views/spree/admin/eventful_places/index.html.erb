@@ -9,22 +9,25 @@
 <% if @eventful_places.any? %>
   <table class="table" id="listing_eventful_places" data-hook>
     <colgroup>
-      <col style="width: 50%">
-      <col style="width: 35%">
-      <col style="width: 15%">
+      <col style="width: 40%">
+      <col style="width: 20%">
+      <col style="width: 20%">
+      <col style="width: 20%">
     </colgroup>
     <thead>
       <tr data-hook="admin_eventful_places_index_headers">
         <th><%= Spree.t(:name) %></th>
         <th><%= Spree::EventfulPlace.human_attribute_name(:active) %></th>
+        <th><%= Spree::EventfulPlace.human_attribute_name(:position) %></th>
         <th data-hook="admin_eventful_places_index_header_actions" class="actions"></th>
       </tr>
     </thead>
     <tbody>
-      <% @eventful_places.each do |place| %>
+      <% @eventful_places.ordered.each do |place| %>
         <tr data-hook="admin_eventful_places_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id place %>">
           <td><%= place.name %></td>
           <td><%= content_tag(:i, '', class: 'icon icon-ok') if place.active %></td>
+          <td><%= place.position %></td>
           <td class="actions text-right" data-hook="admin_eventful_places_index_row_actions">
             <%= link_to_edit place, no_text: true %>
             <%= link_to_delete place, no_text: true %>
