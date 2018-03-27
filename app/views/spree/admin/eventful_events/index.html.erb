@@ -32,8 +32,8 @@
           <td><%= event.place_name %></td>
           <td><%= event.name %></td>
           <td><%= content_tag(:i, '', class: 'icon icon-ok') if event.global %></td>
-          <td><%= event.starts_at %></td>
-          <td><%= event.ends_at %></td>
+          <td><%= event.pretty_starts_at %></td>
+          <td><%= event.pretty_ends_at %></td>
           <td class="actions text-right" data-hook="admin_eventful_events_index_row_actions">
             <%= link_to_edit event, no_text: true %>
             <%= link_to_delete event, no_text: true %>
