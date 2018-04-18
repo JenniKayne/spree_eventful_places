@@ -8,7 +8,7 @@ jQuery(document).on('ready page:change', function() {
       var hours = ("0" + date.getHours()).slice(-2);
       var minutes = ("0" + date.getMinutes()).slice(-2);
       $(this).datetimepicker({
-        format: 'Y-m-d H:i',
+        format: 'Y-m-d h:i A',
         lang: lang,
         defaultDate: date.getFullYear() + '/' + month + '/' + day,
         defaultTime: hours + ':' + minutes
