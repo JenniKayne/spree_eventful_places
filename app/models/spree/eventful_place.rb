@@ -23,7 +23,7 @@ module Spree
     after_post_process :find_dimensions
 
     def all_events
-      @all_events ||= events.or(Spree::EventfulEvent.global)
+      @all_events ||= events.or(Spree::EventfulEvent.global).order(:starts_at)
     end
 
     def find_dimensions
